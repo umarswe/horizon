@@ -1,12 +1,4 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */{
+{
   "sections": {
     "main": {
       "type": "product-information",
@@ -68,6 +60,7 @@
               "type": "group",
               "name": "Header",
               "settings": {
+                "link": "",
                 "open_in_new_tab": false,
                 "content_direction": "column",
                 "vertical_on_mobile": true,
@@ -137,6 +130,12 @@
                     "type_preset": "paragraph",
                     "width": "100%",
                     "alignment": "left",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "color": "var(--color-foreground)",
                     "padding-block-start": 4,
                     "padding-block-end": 0,
                     "padding-inline-start": 0,
@@ -220,6 +219,7 @@
               "type": "group",
               "name": "Policies",
               "settings": {
+                "link": "",
                 "open_in_new_tab": false,
                 "content_direction": "column",
                 "vertical_on_mobile": true,
@@ -258,6 +258,7 @@
                   "type": "group",
                   "name": "Shipping policy",
                   "settings": {
+                    "link": "",
                     "open_in_new_tab": false,
                     "content_direction": "row",
                     "vertical_on_mobile": false,
@@ -298,6 +299,7 @@
                       "settings": {
                         "icon": "truck",
                         "width": 16,
+                        "link": "",
                         "open_in_new_tab": false
                       },
                       "blocks": {}
@@ -338,6 +340,7 @@
                   "type": "group",
                   "name": "Return policy",
                   "settings": {
+                    "link": "",
                     "open_in_new_tab": false,
                     "content_direction": "row",
                     "vertical_on_mobile": false,
@@ -378,6 +381,7 @@
                       "settings": {
                         "icon": "return",
                         "width": 16,
+                        "link": "",
                         "open_in_new_tab": false
                       },
                       "blocks": {}
@@ -424,7 +428,7 @@
               "type": "text",
               "name": "Product description",
               "settings": {
-                "text": "{{ closest.product.description }}",
+                "text": "<p>{{ closest.product.description }}</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
@@ -537,6 +541,7 @@
             "group_zGryyP": {
               "type": "group",
               "settings": {
+                "link": "",
                 "open_in_new_tab": false,
                 "content_direction": "column",
                 "vertical_on_mobile": true,
@@ -607,6 +612,12 @@
                     "type_preset": "h6",
                     "width": "100%",
                     "alignment": "left",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "color": "var(--color-foreground)",
                     "padding-block-start": 0,
                     "padding-block-end": 0,
                     "padding-inline-start": 0,
@@ -664,10 +675,20 @@
         "padding-block-start": 48,
         "padding-block-end": 48
       }
+    },
+    "recently_viewed_FgWzny": {
+      "type": "recently-viewed",
+      "name": "Recently Viewed",
+      "settings": {
+        "section_title": "Recently Viewed",
+        "empty_message": "No recently viewed products yet.",
+        "max_products": 4
+      }
     }
   },
   "order": [
     "main",
-    "product_recommendations_qggXJq"
+    "product_recommendations_qggXJq",
+    "recently_viewed_FgWzny"
   ]
 }
