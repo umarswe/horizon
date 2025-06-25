@@ -2,6 +2,51 @@
   "type": "header",
   "name": "Header",
   "sections": {
+    "header_announcements_T7gKz8": {
+      "type": "header-announcements",
+      "blocks": {
+        "announcement_MkrAWA": {
+          "type": "_announcement",
+          "settings": {
+            "text": "Free Shipping on Orders $50+ and International $100+",
+            "link": "",
+            "font": "var(--font-body--family)",
+            "font_size": "0.75rem",
+            "weight": "",
+            "letter_spacing": "loose",
+            "case": "uppercase"
+          },
+          "blocks": {}
+        },
+        "announcement_npLBMP": {
+          "type": "_announcement",
+          "name": "t:names.announcement",
+          "settings": {
+            "text": "100% OF NET PROCEEDS on the ph Adjusting Lip balm for LA WILDFIRE RELIEF.",
+            "link": "",
+            "font": "var(--font-body--family)",
+            "font_size": "0.75rem",
+            "weight": "",
+            "letter_spacing": "loose",
+            "case": "uppercase"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "announcement_MkrAWA",
+        "announcement_npLBMP"
+      ],
+      "name": "t:names.announcement_bar",
+      "settings": {
+        "speed": 5,
+        "section_width": "page-width",
+        "color_scheme": "scheme-1",
+        "divider_width": 0,
+        "padding-block-start": 10,
+        "padding-block-end": 10
+      }
+    },
     "header_section": {
       "type": "header",
       "blocks": {
@@ -75,50 +120,6 @@
         "product_color_scheme": "default",
         "enable_transparent_header_collection": false,
         "collection_color_scheme": "default"
-      }
-    },
-    "header_announcements_T7gKz8": {
-      "type": "header-announcements",
-      "blocks": {
-        "announcement_MkrAWA": {
-          "type": "_announcement",
-          "settings": {
-            "text": "Free Shipping on Orders $50+ and International $100+",
-            "link": "",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "weight": "",
-            "letter_spacing": "normal",
-            "case": "none"
-          },
-          "blocks": {}
-        },
-        "announcement_npLBMP": {
-          "type": "_announcement",
-          "name": "t:names.announcement",
-          "settings": {
-            "text": "100% OF NET PROCEEDS on the ph Adjusting Lip balm for LA WILDFIRE RELIEF.",
-            "link": "",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "weight": "",
-            "letter_spacing": "normal",
-            "case": "none"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "announcement_MkrAWA",
-        "announcement_npLBMP"
-      ],
-      "name": "t:names.announcement_bar",
-      "settings": {
-        "speed": 5,
-        "section_width": "page-width",
-        "divider_width": 0,
-        "padding-block-start": 15,
-        "padding-block-end": 15
       }
     }
   },
