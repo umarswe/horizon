@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   color: var(--color-foreground);
   background: var(--color-background);
@@ -26,7 +30,51 @@ body {
   --font-h5--family: 'Helvetica Neue', system-ui, sans-serif;
   --font-h6--family: 'Helvetica Neue', system-ui, sans-serif;
   --button-font-family-primary: 'Helvetica Neue', system-ui, sans-serif;
-  --button-font-family-secondary: 'Helvetica Neue', system-ui, sans-serif;
+  --button-font-family-secondary: 'Helvetica Neue', sans-serif;
+}
+
+/* Custom Font Definitions */
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('HelveticaNeue-Regular.woff2') format('woff2'),
+       url('HelveticaNeue-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('HelveticaNeue-Bold.woff2') format('woff2'),
+       url('HelveticaNeue-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('HelveticaNeue-Light.woff2') format('woff2'),
+       url('HelveticaNeue-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Editor\'s Note';
+  src: url('Editor_sNote-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Editor\'s Note';
+  src: url('Editor_sNote-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
 html {
@@ -708,11 +756,11 @@ placeholder-image > img {
 body,
 .paragraph:not(.button),
 .paragraph > * {
-  font-family: var(--font-paragraph--family);
-  font-style: var(--font-paragraph--style);
-  font-weight: var(--font-paragraph--weight);
-  font-size: var(--font-paragraph--size);
-  line-height: var(--font-paragraph--line-height);
+  font-family: "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.1rem;
   text-transform: var(--font-paragraph--case);
   -webkit-font-smoothing: antialiased;
   color: var(--color, var(--color-foreground));
@@ -740,12 +788,12 @@ h1,
 h2,
 .h2.h2,
 .text-block.h2 > * {
-  font-family: var(--font-h2--family);
+  font-family: "Editor's Note", serif;
   font-style: var(--font-h2--style);
-  font-weight: var(--font-h2--weight);
-  font-size: var(--font-h2--size);
-  line-height: var(--font-h2--line-height);
-  letter-spacing: var(--font-h2--letter-spacing);
+  font-weight: 300;
+  font-size: 5.5rem;
+  line-height: 6rem;
+  letter-spacing: 0.2rem;
   text-transform: var(--font-h2--case);
   color: var(--color, var(--font-h2-color));
 }
@@ -4102,61 +4150,4 @@ text-component {
   z-index: auto;
   transform: none;
   box-shadow: none;
-}
-
-/* Custom Font Definitions */
-@font-face {
-  font-family: 'Helvetica Neue';
-  src: url('HelveticaNeue-Regular.woff2') format('woff2'),
-       url('HelveticaNeue-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Helvetica Neue';
-  src: url('HelveticaNeue-Bold.woff2') format('woff2'),
-       url('HelveticaNeue-Bold.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Helvetica Neue';
-  src: url('HelveticaNeue-Light.woff2') format('woff2'),
-       url('HelveticaNeue-Light.woff') format('woff');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Editor\'s Note';
-  src: url('Editor_sNote-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Editor\'s Note';
-  src: url('Editor_sNote-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Override theme fonts with your custom fonts */
-:root {
-  --font-paragraph--family: 'Helvetica Neue', system-ui, -apple-system, sans-serif;
-  --font-h1--family: 'Editor\'s Note', 'Helvetica Neue', system-ui, sans-serif;
-  --font-h2--family: 'Editor\'s Note', 'Helvetica Neue', system-ui, sans-serif;
-  --font-h3--family: 'Helvetica Neue', system-ui, sans-serif;
-  --font-h4--family: 'Helvetica Neue', system-ui, sans-serif;
-  --font-h5--family: 'Helvetica Neue', system-ui, sans-serif;
-  --font-h6--family: 'Helvetica Neue', system-ui, sans-serif;
-  --button-font-family-primary: 'Helvetica Neue', system-ui, sans-serif;
-  --button-font-family-secondary: 'Helvetica Neue', system-ui, sans-serif;
 }

@@ -327,7 +327,8 @@
         "type": "font_picker",
         "id": "type_body_font",
         "default": "work_sans_n4",
-        "label": "t:options.body"
+        "label": "t:options.body",
+        "info": "Custom fonts: Helvetica Neue, Editor's Note available"
       },
       {
         "type": "font_picker",
@@ -385,7 +386,7 @@
             "label": "18px"
           }
         ],
-        "default": "14"
+        "default": "16"
       },
       {
         "type": "select",
