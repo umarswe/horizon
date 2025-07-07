@@ -5,6 +5,11 @@
   style="{% render 'size-style', settings: block.settings %}{% render 'spacing-style', settings: block.settings %}"
   {{ block.shopify_attributes }}
 >
+  {% if block.settings.title != blank %}
+    <h2 class="email-signup__title">
+      {{ block.settings.title }}
+    </h2>
+  {% endif %}
   {%- form 'customer', class: 'email-signup__form spacing-style' %}
     <div
       class="email-signup__input-group {% if block.settings.inherit_color_scheme == false %}color-{{ block.settings.color_scheme }}{% endif %}"
@@ -92,6 +97,16 @@
 </div>
 
 {% stylesheet %}
+  .email-signup__title {
+    font-family: "EditorsNote", sans-serif;
+    font-style: italic;
+    text-transform: none;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 1.3rem;
+  }
+
   .email-signup-block {
     @media screen and (width < 750px) {
       width: 100%;
@@ -548,6 +563,12 @@
       "step": 1,
       "unit": "px",
       "default": 0
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Sign up for our newsletter"
     }
   ],
   "presets": [

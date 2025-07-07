@@ -1,20 +1,20 @@
 
 
-<div
-  class="
-    footer-utilities__group-copyright
-    custom-typography
-    {% if block.settings.font_size != "" %}custom-font-size{% endif %}
-  "
-  style="{% render 'typography-style', preset: 'custom', settings: block.settings %}"
-  {{ block.shopify_attributes }}
->
+<div class="footer-utilities__group-copyright">
   <span class="footer-utilities__text">
     &copy; {{ 'now' | date: '%Y' }}
     {{ shop.name | link_to: routes.root_url -}}
-    , {{ powered_by_link }}
   </span>
 </div>
+
+{% stylesheet %}
+  .footer-utilities__text{
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-transform: uppercase;
+  }
+{% endstylesheet %}
 
 {% schema %}
 {
