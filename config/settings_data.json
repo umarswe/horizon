@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
-{
+ {
   "current": {
     "logo": "shopify://shop_images/jouer_logo_black.avif",
     "type_body_font": "inter_n4",
@@ -77,7 +77,7 @@
     "blocks": {
       "8962992520437913685": {
         "type": "shopify://apps/yotpo-loyalty-rewards/blocks/loader-app-embed-block/2f9660df-5018-4e02-9868-ee1fb88d6ccd",
-        "disabled": false,
+        "disabled": true,
         "settings": {
           "inject_modules_loader": true,
           "inject_sdk_loader": true
@@ -94,7 +94,7 @@
         "settings": {
           "background": "#ffffff",
           "foreground_heading": "#000000",
-          "foreground": "#000000cf",
+          "foreground": "#575757",
           "primary": "#000000cf",
           "primary_hover": "#000000",
           "border": "#0000000f",
@@ -133,30 +133,30 @@
         "settings": {
           "background": "#f5f5f5",
           "foreground_heading": "#000000",
-          "foreground": "#000000cf",
+          "foreground": "#ffffff",
           "primary": "#000000cf",
           "primary_hover": "#000000",
           "border": "#000000cf",
           "shadow": "#000000",
-          "primary_button_background": "#000000",
+          "primary_button_background": "rgba(0,0,0,0)",
           "primary_button_text": "#ffffff",
-          "primary_button_border": "#000000",
-          "primary_button_hover_background": "#333333",
+          "primary_button_border": "#ffffff",
+          "primary_button_hover_background": "rgba(0,0,0,0)",
           "primary_button_hover_text": "#ffffff",
           "primary_button_hover_border": "#333333",
-          "secondary_button_background": "#ffffffb0",
-          "secondary_button_text": "#000000",
-          "secondary_button_border": "#ffffffb0",
-          "secondary_button_hover_background": "#ffffff",
-          "secondary_button_hover_text": "#000000",
+          "secondary_button_background": "#00000000",
+          "secondary_button_text": "#ffffff",
+          "secondary_button_border": "#ffffff",
+          "secondary_button_hover_background": "#00000000",
+          "secondary_button_hover_text": "#ffffff",
           "secondary_button_hover_border": "#ffffff",
           "input_background": "rgba(0,0,0,0)",
           "input_text_color": "#00000087",
-          "input_border_color": "#00000021",
+          "input_border_color": "#ffffff",
           "input_hover_background": "#ffffff5c",
           "variant_background_color": "#ffffff",
           "variant_text_color": "#000000",
-          "variant_border_color": "#e6e6e6",
+          "variant_border_color": "#ffffff",
           "variant_hover_background_color": "#f5f5f5",
           "variant_hover_text_color": "#000000",
           "variant_hover_border_color": "#e6e6e6",
@@ -416,8 +416,8 @@
             "primary_hover": "#000000",
             "border": "#000000cf",
             "shadow": "#000000",
-            "primary_button_background": "#000000",
-            "primary_button_text": "#ffffff",
+            "primary_button_background": "transparent",
+            "primary_button_text": "red",
             "primary_button_border": "#000000",
             "primary_button_hover_background": "#333333",
             "primary_button_hover_text": "#ffffff",

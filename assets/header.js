@@ -1,5 +1,6 @@
 import { Component } from '@theme/component';
 import { onDocumentReady, changeMetaThemeColor } from '@theme/utilities';
+import { MegaMenuHoverEvent } from './events';
 
 /**
  * @typedef {Object} HeaderComponentRefs
