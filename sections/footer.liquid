@@ -3,6 +3,38 @@
     --color-background: 216,184,179,1;
     background-color: rgba(var(--color-background));
   }
+
+  .section-footer {
+    padding-left: 10rem;
+    padding-right: 10rem;
+
+    @media screen and (width < 768px) {
+      padding-left: 2.4rem;
+      padding-right: 2.4rem;
+    }
+  }
+
+  @media screen and (width < 768px) {
+    .section-footer .logo-block__image-wrapper {
+      display: none;
+    }
+
+    .section-footer .group-block-content {
+      flex-direction: column-reverse;
+    }
+
+    .section-footer .group-block-content .mobile-column {
+      flex-direction: column;
+    }
+
+    .section-footer .layout-panel-flex {
+      gap: var(--gap-mobile, var(--gap));
+    }
+
+    .section-footer.section-content-wrapper {
+      gap: {{ section.settings.footer_gap_mobile }}px;
+    }
+  }
 </style>
 
 <div class="section-background color-{{ section.settings.color_scheme }}"></div>
@@ -26,13 +58,12 @@
       layout-panel-flex
       layout-panel-flex--{{ section.settings.content_direction }}
       section-content-wrapper
+      section-footer
       {% if section.settings.vertical_on_mobile %} mobile-column{% endif %}
     "
     style="
       {% render 'layout-panel-style', settings: section.settings %}
       {%  render 'spacing-style', settings: section.settings %}
-      padding-left: 10rem;
-      padding-right: 10rem;
     "
   >
     {% content_for 'blocks' %}
@@ -227,6 +258,26 @@
       "step": 1,
       "unit": "px",
       "default": 12
+    },
+    {
+      "type": "range",
+      "id": "footer_gap_mobile",
+      "label": "t:settings.gap_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "gap_mobile",
+      "label": "Accordion Gap",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 8
     },
     {
       "type": "header",

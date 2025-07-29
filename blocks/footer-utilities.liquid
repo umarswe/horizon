@@ -39,19 +39,19 @@
     width: 100%;
     text-align: center;
 
-    @media screen and (width >= 750px) {
+    @media screen and (width < 768px) {
       text-align: left;
     }
   }
 
   .footer-utilities__group--right {
-    @media screen and (width >= 750px) {
+    @media screen and (width < 768px) {
       justify-content: flex-end;
     }
   }
 
   .footer-utilities__group:empty {
-    @media screen and (width < 750px) {
+    @media screen and (width < 768px) {
       display: none;
     }
   }

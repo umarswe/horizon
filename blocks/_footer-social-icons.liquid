@@ -14,9 +14,10 @@
     flex-wrap: wrap;
     justify-content: center;
 
-    @media screen and (width >= 750px) {
+    @media screen and (width < 768px) {
       flex-wrap: nowrap;
       justify-content: flex-start;
+      margin-bottom: 3rem;
     }
   }
 {% endstylesheet %}

@@ -185,6 +185,7 @@
     "favicon": "Favicon",
     "font_family": "Famiglia di font",
     "gap": "Divario",
+    "gap_mobile": "Divario (Mobile)",
     "geometric_translate_y": "Traslazione geometrica Y",
     "heading": "Titolo",
     "icon": "Icona",
