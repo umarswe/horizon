@@ -22,13 +22,6 @@
 
 {% capture header %}
   <div class="predictive-search-results__resource-header">
-    <span
-      id="predictive-search-collections"
-      class="predictive-search-results__title"
-    >
-      {{ title }}
-    </span>
-
     {% if resources.size >= 4 %}
       {%- render 'slideshow-controls',
         show_arrows: true,

@@ -17,7 +17,7 @@
   assign discount_codes = discount_codes | uniq
 %}
 
-<cart-discount-component
+{% comment %} <cart-discount-component
   data-section-id="{{ section_id }}"
 >
   <accordion-custom class="cart-discount">
@@ -108,7 +108,7 @@
       </div>
     </details>
   </accordion-custom>
-</cart-discount-component>
+</cart-discount-component> {% endcomment %}
 
 {% stylesheet %}
   .cart-discount__input {
