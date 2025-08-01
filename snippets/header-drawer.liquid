@@ -461,50 +461,6 @@
                             </li>
                           {%- endfor -%}
                         </ul>
-                        {% liquid
-                          if block.settings.menu_style == 'featured_collections'
-                            assign featured_collections = link.links | where: 'type', 'collection_link'
-                          endif
-
-                          if block.settings.menu_style == 'featured_products'
-                            assign collection_linklist = link.links | where: 'type', 'collection_link' | first
-                            assign featured_products = collection_linklist.object.products
-                          endif
-                        -%}
-
-                        {% if featured_collections.size > 0 or featured_products.size > 0 %}
-                          <div
-                            class="menu-drawer__featured-content menu-drawer__featured-content--childlist"
-                            style="--menu-drawer-animation-index: {{ linklist.links.size | plus: 1 }};"
-                          >
-                            <ul class="menu-drawer__featured-content-list list-unstyled">
-                              {% if featured_collections.size > 0 %}
-                                {%- for collection in featured_collections limit: max_featured_items -%}
-                                  <li class="menu-drawer__featured-content-list-item menu-drawer__featured-content-list-item--collection">
-                                    {% render 'resource-card',
-                                      resource: collection.object,
-                                      resource_type: 'collection',
-                                      image_width: 500,
-                                      style: 'overlay',
-                                      image_aspect_ratio: ratio
-                                    %}
-                                  </li>
-                                {%- endfor -%}
-                              {% else %}
-                                {%- for product in featured_products limit: max_featured_items -%}
-                                  <li class="menu-drawer__featured-content-list-item menu-drawer__featured-content-list-item--product">
-                                    {% render 'resource-card',
-                                      resource: product,
-                                      resource_type: 'product',
-                                      image_width: 300,
-                                      image_aspect_ratio: ratio
-                                    %}
-                                  </li>
-                                {%- endfor -%}
-                              {% endif %}
-                            </ul>
-                          </div>
-                        {% endif %}
                       </div>
                     </div>
                   </details>
@@ -550,51 +506,45 @@
             country_style: section.settings.country_selector_style
           %}
         {%- endif -%}
-      </div>
-
-      {% liquid
-        if block.settings.menu_style == 'featured_collections'
-          assign top_level_featured_collections = linklist.links | where: 'type', 'collection_link'
-        endif
-
-        if block.settings.menu_style == 'featured_products'
-          assign collection_linklist = linklist.links | where: 'type', 'collection_link' | first
-          assign top_level_featured_products = collection_linklist.object.products
-        endif
-      -%}
-      {% if top_level_featured_collections.size > 0 or top_level_featured_products.size > 0 %}
-        <div
-          class="menu-drawer__featured-content"
-          style="--menu-drawer-animation-index: {{ linklist.links.size | plus: 1 }};"
-        >
-          <ul class="menu-drawer__featured-content-list menu-drawer__animated-element list-unstyled">
-            {% if top_level_featured_collections.size > 0 %}
-              {%- for collection in top_level_featured_collections limit: max_featured_items -%}
-                <li class="menu-drawer__featured-content-list-item menu-drawer__featured-content-list-item--collection">
-                  {% render 'resource-card',
-                    resource: collection.object,
-                    resource_type: 'collection',
-                    image_width: 500,
-                    style: 'overlay',
-                    image_aspect_ratio: ratio
-                  %}
-                </li>
-              {%- endfor -%}
-            {% elsif top_level_featured_products.size > 0 %}
-              {%- for product in top_level_featured_products limit: max_featured_items -%}
-                <li class="menu-drawer__featured-content-list-item menu-drawer__featured-content-list-item--product">
-                  {% render 'resource-card',
-                    resource: product,
-                    resource_type: 'product',
-                    image_width: 300,
-                    image_aspect_ratio: ratio
-                  %}
-                </li>
-              {%- endfor -%}
-            {% endif %}
-          </ul>
+        
+        <!-- Add footer logo at the bottom of drawer -->
+        <div class="menu-drawer__footer-section">
+          <div class="menu-drawer__footer-logo">
+            <a href="{{ routes.root_url }}" class="menu-drawer__logo-link">
+              {% render 'jouer-logo', class: 'menu-drawer__logo-image', width: 80 %}
+            </a>
+          </div>
+          
+          <!-- Add footer social icons -->
+          <div class="menu-drawer__social-icons">
+            <a href="https://www.instagram.com/shopify/#" target="_blank" rel="noopener noreferrer" class="menu-drawer__social-link">
+              <svg class="menu-drawer__social-icon" viewBox="0 0 20 20">
+                {% render 'icon', icon: 'instagram' %}
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/shopify" target="_blank" rel="noopener noreferrer" class="menu-drawer__social-link">
+              <svg class="menu-drawer__social-icon" viewBox="0 0 20 20">
+                {% render 'icon', icon: 'facebook' %}
+              </svg>
+            </a>
+            <a href="https://www.tiktok.com/@shopify" target="_blank" rel="noopener noreferrer" class="menu-drawer__social-link">
+              <svg class="menu-drawer__social-icon" viewBox="0 0 20 20">
+                {% render 'icon', icon: 'tiktok' %}
+              </svg>
+            </a>
+            <a href="https://www.youtube.com/shopify" target="_blank" rel="noopener noreferrer" class="menu-drawer__social-link">
+              <svg class="menu-drawer__social-icon" viewBox="0 0 20 20">
+                {% render 'icon', icon: 'youtube' %}
+              </svg>
+            </a>
+            <a href="https://x.com/shopify" target="_blank" rel="noopener noreferrer" class="menu-drawer__social-link">
+              <svg class="menu-drawer__social-icon" viewBox="0 0 20 20">
+                {% render 'icon', icon: 'x' %}
+              </svg>
+            </a>
+          </div>
         </div>
-      {% endif %}
+      </div>
     </div>
     <div
       class="menu-drawer__backdrop"
@@ -650,6 +600,10 @@
     }
   }
 
+  .header-drawer-icon--close {
+    background-color: transparent !important;
+  }
+
   details:not([open]) .header__icon--menu .header-drawer-icon--close {
     display: none;
   }
@@ -685,6 +639,7 @@
     border-right: var(--style-border-drawer);
     box-shadow: var(--shadow-drawer);
     flex-direction: column;
+    padding: 1.4rem 2.4rem;
 
     @media screen and (width >= 750px) {
       width: 25rem;
@@ -762,12 +717,10 @@
   }
 
   .menu-drawer__menu {
-    --menu-drawer-inline-padding: calc(var(--padding-sm) + 7px);
-
     list-style: none;
-    padding-inline: var(--drawer-padding);
-    margin-inline: 0;
-    margin-block-start: 0;
+    padding: 0;
+    margin: 0;
+    margin-top: 2.5rem !important;
   }
 
   .menu-drawer__menu--grid {
@@ -950,17 +903,17 @@
   }
 
   .menu-drawer__close-button {
-    background-color: transparent;
+    background-color: transparent !important;
     color: var(--color-foreground);
-    padding: var(--padding-xl);
+    padding: 0 !important;
     box-shadow: none;
     will-change: transform;
   }
 
   .menu-drawer__close-button .svg-wrapper,
   .menu-drawer__close-button svg {
-    width: var(--icon-size-xs);
-    height: var(--icon-size-xs);
+    width: 2rem;
+    height: 2rem;
   }
 
   .menu-drawer__back-button {
@@ -982,6 +935,15 @@
   .menu-drawer__menu-item-text {
     overflow-x: hidden;
     text-overflow: ellipsis;
+
+    font-family: "EditorsNote", sans-serif;
+    padding: 1.1rem 0;
+    color: #393939;
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: 0.6px;
+    line-height: 2.6rem;
   }
 
   /** Styles when the country selector is hidden */
@@ -1038,6 +1000,63 @@
     margin-block: auto var(--padding-sm);
     margin-inline-start: var(--padding-xl);
     background-color: rgb(var(--color-foreground) 0.03);
+  }
+
+  .menu-drawer__footer-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .menu-drawer__footer-logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .menu-drawer__logo-link {
+    text-decoration: none;
+    color: var(--color-foreground);
+  }
+
+  .menu-drawer__logo-link svg {
+    width: 8rem !important;
+    height: 2.2rem !important;
+    object-fit: contain;
+    margin: 0;
+  }
+
+  .menu-drawer__logo-text {
+    font-size: 1.8rem;
+    font-weight: 600;
+    font-family: var(--font-heading--family);
+  }
+
+  .menu-drawer__social-icons {
+    display: flex;
+    gap: 1.6rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .menu-drawer__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    color: var(--color-foreground);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .menu-drawer__social-link:hover {
+    color: var(--color-foreground-muted);
+  }
+
+  .menu-drawer__social-icon {
+    width: 2rem !important;
+    height: 2rem !important;
+    fill: #393939;
   }
 
   .menu-drawer__account {

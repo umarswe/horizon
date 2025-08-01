@@ -182,6 +182,40 @@
     z-index: var(--layer-heightened);
   }
 
+  /* Search modal specific styling */
+  .search-modal predictive-search-component {
+    max-width: 52rem;
+    width: 100%;
+  }
+
+  .search-modal .predictive-search-form__header-inner {
+    max-width: 52rem;
+    border: 1px solid #dddddd;
+    background-color: #ffffff;
+  }
+
+  .search-modal .search-input {
+    max-width: 52rem;
+    padding-right: calc(var(--icon-size-lg) + var(--margin-xl) * 1.5);
+    padding-left: var(--padding-lg);
+  }
+
+  /* Move search icon to the right in modal */
+  .search-modal .predictive-search__icon {
+    top: 50% !important;
+    right: 5% !important;
+    transform: translate(0, -50%) !important;
+  }
+
+  /* Always show close button in modal */
+  .search-modal .predictive-search__close-modal-button {
+    display: flex !important;
+    
+    @media screen and (width >= 750px) {
+      display: flex !important;
+    }
+  }
+
   .predictive-search-dropdown {
     display: flex;
     flex-direction: column;
@@ -413,20 +447,15 @@
 
   .predictive-search__icon {
     position: absolute;
-    left: var(--margin-xl);
     top: auto;
-    width: var(--icon-size-lg);
-    height: var(--icon-size-lg);
+    width: 2.6rem !important;
+    height: 2.6rem !important;
     color: rgb(from var(--color-foreground) r g b / 60%);
-
-    @media screen and (width >= 750px) {
-      left: var(--margin-md);
-    }
   }
 
   .predictive-search__icon > svg {
-    width: var(--icon-size-md);
-    height: var(--icon-size-md);
+    width: 2.6rem !important;
+    height: 2.6rem !important;
   }
 
   .predictive-search__reset-button {
@@ -639,10 +668,6 @@
       width: var(--icon-size-xs);
       height: var(--icon-size-xs);
     }
-
-    @media screen and (width >= 750px) {
-      display: none;
-    }
   }
 
   .predictive-search-form__footer {
@@ -668,7 +693,6 @@
   .dialog-modal .predictive-search-form__header {
     border: 0;
     border-radius: 0;
-    background-color: var(--color-background);
     border-bottom: var(--style-border-width) solid var(--color-border);
 
     @media screen and (width >= 750px) {
